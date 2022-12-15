@@ -56,7 +56,7 @@ st.write(st.session_state['children'])
 
 # smoker : 흡연여부
 st.checkbox(
-    label='흡연여부'
+    label='흡연여부',
     value=False,
     key='smoker'
 )
