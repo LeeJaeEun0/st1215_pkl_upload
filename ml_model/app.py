@@ -71,6 +71,18 @@ st.selectbox(
 )
 st.write(st.session_state['region'])
 
-# 실행버튼
 if st.button('예측'):
     st.snow()
+    # 예측
+    # model.predict(X_test) -> 전처리한 데이터 형태로 들어간 행렬, df.
+    # df X -> 이중 리스트 ([])
+    # [ [age,bmi,children,smoker,sex_male,
+    #    region_northwest,region_northeast,region_southwest] ]
+    state = st.session_state
+    input_values = [[
+        state['age'], state['bmi'], state['children'], state['smoker'],
+        state['sex'] == '남성', state['region'] == '북서',
+        state['region'] == '북동', state['region'] == '남서'
+    ]]
+    pred = model.predict(input_values)
+    st.write(pred[0])
