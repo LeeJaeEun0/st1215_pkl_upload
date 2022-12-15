@@ -88,4 +88,4 @@ if st.button('예측'):
     ]]
     pred = model.predict(input_values)
     #st.write(pred[0])
-    st.metric(label='예측값', value=pred[0])
+    st.metric(label='예측값', value=pred[0]) # 예측값의 결과를 담은 것
