@@ -80,6 +80,7 @@ if st.button('예측'):
     # [ [age,bmi,children,smoker,sex_male,
     #    region_northwest,region_northeast,region_southwest] ]
     state = st.session_state
+    st.write(st.session_state)
     input_values = [[
         state['age'], state['bmi'], state['children'], state['smoker'],
         state['sex'] == '남성', state['region'] == '북서',
