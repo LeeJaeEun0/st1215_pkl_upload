@@ -85,6 +85,5 @@ if st.button('예측'):
         state['region'] == '북동', state['region'] == '남서'
     ]]
     pred = model.predict(input_values)
-\
     #st.write(pred[0])
     st.metric(label='예측값', value=pred[0])
