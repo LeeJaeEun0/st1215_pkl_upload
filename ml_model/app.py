@@ -73,4 +73,4 @@ st.write(st.session_state['region'])
 
 # 실행버튼
 if st.button('예측'):
-    st.balloons()
+    st.snow()
