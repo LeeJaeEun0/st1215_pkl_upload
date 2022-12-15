@@ -72,5 +72,5 @@ st.selectbox(
 st.write(st.session_state['region'])
 
 # 실행버튼
-if st.bution('예측하기'):
-    st.snow()
+if st.button('예측'):
+    st.balloons()
