@@ -70,3 +70,7 @@ st.selectbox(
     key='region'
 )
 st.write(st.session_state['region'])
+
+# 실행버튼
+if st.bution('예측하기')
+    st.snow()
