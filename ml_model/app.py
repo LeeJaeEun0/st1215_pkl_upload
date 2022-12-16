@@ -5,6 +5,8 @@
 # 2. Colab, Jupiter Notebook ... -> pkl 모델 파일 -> joblib 읽어들여와서 쓰는 방법
 # 훈련 자체 시간이 많이 걸린다, 결과값만 빠르게 보여주고 싶다
 # streamlit 라이브러리 호출
+
+# with st.echo()를 통해서 코드를 어떻게 썼는지 확인가능
 import streamlit as st
 with st.echo(code_location="below"):
     import pandas as pd
@@ -105,11 +107,19 @@ if st.button('예측'):
     #    region_northwest,region_northeast,region_southwest] ]
     state = st.session_state
     st.write(st.session_state)
-    input_values = [[
+    # model.predict(...)
+    # 예측에 쓰일 여러개의 행들
+    # 행 -> (df -> 독립변수들을 담은 행들 - 1개~)
+    # 한줄로 만듦
+    row = [[
         state['age'], state['bmi'], state['children'], state['smoker'],
         state['sex'] == '남성', state['region'] == '북서',
         state['region'] == '북동', state['region'] == '남서'
     ]]
-    pred = model.predict(input_values)
-    #st.write(pred[0])
+    pred = model.predict(row) # y값 하나만 나옴
+    # ([row,row,row]) => 여러개 결과 ->  y값의 리스트
+    #st.write(pred[0]) 우리가 한줄만 입력했으니까
     st.metric(label='예측값', value=pred[0]) # 예측값의 결과를 담은 것
+
+    # 전처리하는 과정만 잘 정의할 수 있으면
+    # 파일을 upload 
