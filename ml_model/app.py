@@ -1,3 +1,15 @@
+# Streamlit 머신러닝
+# 1-1. 머신러닝 라이브러리/패키지 requirements에 설치
+# 1-2. 데이터, 패러미터들로 모델 훈련 -> 모델 사용
+# 훈련에 많은 시간 안 걸리는 경우
+# 2. Colab, Jupiter Notebook ... -> pkl 모델 파일 -> joblib 읽어들여와서 쓰는 방법
+# 훈련 자체 시간이 많이 걸린다, 결과값만 빠르게 보여주고 싶다
+# streamlit 라이브러리 호출
+import streamlit as st
+with st.echo():
+    import pandas as pd
+
+
 import streamlit as st
 import pandas as pd
 
